@@ -1,11 +1,13 @@
 const grados = document.getElementById("grados")
+const Weather_API = ""
 
 // TODO: Tengo que agregar en el JSON. Pais y capital. Para poder sacar todos estos datos.
+//! Cambiar la API Key
 
 export function getTiempo(randomCity) {
   fetch(
     "http://api.weatherapi.com/v1/current.json?key=" +
-      process.env.Weather_API +
+      Weather_API +
       "&q=" +
       randomCity +
       "&aqi=no"

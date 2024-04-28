@@ -2,6 +2,8 @@ import { generateRandom } from "./scripts/Random.js"
 import { queetion } from "./scripts/questions.js"
 import { getTiempo } from "./scripts/tiempo.js"
 
+const jsConfetti = new JSConfetti()
+
 const respuesta = document.getElementById("respuesta")
 const modal = document.getElementById("modal")
 
@@ -15,6 +17,7 @@ generateRandom().then((rCountry) => {
     if (event.key === "Enter") {
       if (respuesta.value.toLowerCase() === rCountry.toLowerCase()) {
         modal.showModal()
+        jsConfetti.addConfetti()
       } else {
         console.log("Incorrecto")
       }
